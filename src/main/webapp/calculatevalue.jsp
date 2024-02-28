@@ -34,23 +34,22 @@
             <input type="submit" value="Get value"/>
         </form>
     </fieldset>
-
     <br>
     <fieldset>
         <legend><b>Result</b></legend>
 
-        <% if(session.getAttribute("checkBoxValue")==null){
-            session.setAttribute("checkBoxValue","Result");
-            session.setAttribute("num0"," ");
-            session.setAttribute("num1"," ");
-            session.setAttribute("num2"," ");
-            session.setAttribute("calculateValue"," ");
+        <% if(request.getAttribute("checkBoxValue")==null){
+            request.setAttribute("checkBoxValue","Result");
+            request.setAttribute("num0"," ");
+            request.setAttribute("num1"," ");
+            request.setAttribute("num2"," ");
+            request.setAttribute("calculateValue"," ");
         }%>
 
-        <p><%= "Number 1: " + session.getAttribute("num0")%></p>
-        <p><%= "Number 2: " + session.getAttribute("num1")%></p>
-        <p><%= "Number 3: " + session.getAttribute("num2")%></p><br>
-        <p><b><%= session.getAttribute("checkBoxValue") + ": "+session.getAttribute("calculateValue")%></b></p>
+        <p><%= "Number 1: " + request.getAttribute("num0")%></p>
+        <p><%= "Number 2: " + request.getAttribute("num1")%></p>
+        <p><%= "Number 3: " + request.getAttribute("num2")%></p><br>
+        <p><b><%= request.getAttribute("checkBoxValue") + ": "+request.getAttribute("calculateValue")%></b></p>
     </fieldset>
     <br>
     <br>
