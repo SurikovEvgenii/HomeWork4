@@ -12,11 +12,10 @@ import java.io.IOException;
 @WebServlet(name = "quote", value = "/quote")
 public class QuoteServlet extends HttpServlet {
 
-    String quoteLinus = "Bad programmers worry about the code. Good programmers worry about data structures and their relationships";
+    private final String quoteLinus = "Bad programmers worry about the code. Good programmers worry about data structures and their relationships";
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        session.setAttribute("quote",quoteLinus);
-        session.getServletContext().getRequestDispatcher("/quote.jsp").forward(req,resp);
+        req.setAttribute("quote",quoteLinus);
+        req.getServletContext().getRequestDispatcher("/quote.jsp").forward(req,resp);
     }
 }
